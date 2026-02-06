@@ -7,42 +7,42 @@ const projects = [
         id: 1,
         title: 'E-commerce Dashboard',
         category: 'React Application',
-        image: 'bg-blue-500', // Placeholder color
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
         description: 'A comprehensive admin dashboard for managing products, orders, and analytics.'
     },
     {
         id: 2,
         title: 'SaaS Landing Page',
         category: 'Landing Page',
-        image: 'bg-purple-500',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
         description: 'High-conversion landing page with modern animations and responsive layout.'
     },
     {
         id: 3,
         title: 'Real Estate Platform',
         category: 'Web Application',
-        image: 'bg-green-500',
+        image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80',
         description: 'Property search and listing platform with map integration and filters.'
     },
     {
         id: 4,
         title: 'Personal Portfolio',
         category: 'Portfolio',
-        image: 'bg-orange-500',
+        image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80',
         description: 'Minimalist developer portfolio showcasing skills and projects.'
     },
     {
         id: 5,
         title: 'Fitness Tracking App',
         category: 'Mobile First',
-        image: 'bg-red-500',
+        image: 'https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=800&q=80',
         description: 'Progressive web app for tracking workouts and nutrition goals.'
     },
     {
         id: 6,
         title: 'Travel Booking Site',
         category: 'E-commerce',
-        image: 'bg-teal-500',
+        image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80',
         description: 'Complete booking flow for flights and hotels with payment integration.'
     }
 ];
@@ -81,7 +81,12 @@ const Portfolio = () => {
                             transition={{ delay: index * 0.1 }}
                             className="group rounded-2xl overflow-hidden border border-gray-100 shadow-lg shadow-gray-200/50 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 bg-white"
                         >
-                            <div className={`h-48 w-full ${project.image} relative overflow-hidden`}>
+                            <div className="h-48 w-full relative overflow-hidden">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
                                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                                     <button className="p-3 bg-white rounded-full text-indigo-600 hover:text-indigo-700 hover:scale-110 transition-all shadow-lg transform translate-y-4 group-hover:translate-y-0 duration-300">
                                         <ExternalLink className="w-5 h-5" />
@@ -90,10 +95,7 @@ const Portfolio = () => {
                                         <Github className="w-5 h-5" />
                                     </button>
                                 </div>
-                                {/* Decorative Pattern Placeholder */}
-                                <div className="w-full h-full opacity-30 flex items-center justify-center text-white/50 text-4xl font-bold">
-                                    {project.title.charAt(0)}
-                                </div>
+                                {/* Decorative Pattern Placeholder - Removed as we have real images now */}
                             </div>
 
                             <div className="p-6">
